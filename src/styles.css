@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+  /*line-height: 1.6;
+  margin: 0;
+  height:100vh;
+  overflow: hidden;*/
+  
+  }
+  *{
+    scroll-behavior: smooth;
+   
+    
+  }
+  nav.scrolled {
+    Background: #265e62;
+  }

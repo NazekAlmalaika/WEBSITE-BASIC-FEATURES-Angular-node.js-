@@ -1,0 +1,35 @@
+.carousel-item {
+  background: no-repeat center center scroll;
+  -webkit-backgroung-size: cover;
+  background-size: cover;
+}
+.carousel-caption {
+  bottom: 220px;
+}
+.carousel-caption h5{
+    font-size:45px;
+    text-transform :uppercase;
+    letter-spacing:2px;
+   position:center;
+    font-family:merienda;
+  
+
+}
+.carousel-caption {
+  top: 25%;
+  bottom: auto;
+}
+.carousel-caption p{
+    width:60%;
+    margin:auto;
+    font-size:18px;
+    line-height:1.9;
+    font-family:poppins;
+
+}
+.text-secondary{
+  color: rgb(42, 46, 46);
+
+  
+}
+

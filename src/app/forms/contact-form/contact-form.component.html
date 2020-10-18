@@ -1,0 +1,39 @@
+<h2 mat-dialog-title class="text-info">Questions?</h2>
+<mat-card class="bg-light alternate-theme">
+<mat-dialog-content class="mat-typography" [formGroup]="form">
+    <form id="formData" #loginForm="ngForm" (ngSubmit)= "contactUs(loginForm)">
+    
+      <mat-form-field>
+        <label for="exampleFormControlInput1">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"  required [pattern]= "emailRegex">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="exampleFormControlSelect1">select a subject</label>
+    <select class="form-control" id="exampleFormControlSelect1" required>
+      <option>subject 1</option>
+      <option>subject 2</option>
+      <option>subject 3</option>
+      <option>subject 4</option>
+      <option>subject 5</option>
+    </select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <label for="exampleFormControlTextarea1">Message</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="7" required></textarea>
+      </mat-form-field>
+     
+      <input type="submit" class="btn bg-gradient-info text-info  border-info" value="Submit" mat-button>
+    </form>
+    
+</mat-dialog-content>
+</mat-card>
+
+<mat-dialog-actions>
+    <!--<button class="mat-raised-button"(click)="close()">Close</button>-->
+    <button mat-button mat-dialog-close class ="text-danger">close</button>
+  <!--<button class="mat-raised-button mat-primary"(click)="save()">Save</button>-->
+</mat-dialog-actions>
+
+

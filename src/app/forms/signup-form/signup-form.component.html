@@ -1,0 +1,41 @@
+
+<h2 mat-dialog-title class="text-info">Sign Up</h2>
+<mat-card class="bg-light alternate-theme">
+<mat-dialog-content class="mat-typography" [formGroup]="form">
+    <form id="formData" #registerForm="ngForm" (ngSubmit)= "postUser(registerForm)">
+      <mat-form-field >
+        <input  matInput placeholder="name" name="name" type="text" ngModel #name="ngModel" required  minlength="6" >
+        <mat-error *ngIf= "name.hasError('required')">Name is required</mat-error>
+        <mat-error *ngIf= "name.hasError('minlength')">Name minlength is 6 digits</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="email" name="email" type="email" ngModel #email="ngModel" required [pattern]= "emailRegex">
+        <mat-error *ngIf= "email.hasError('required')" >Email is required</mat-error>
+        <mat-error *ngIf= "email.hasError('pattern')" >Email address is invalid</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="password" name="password" type="password" ngModel #password="ngModel" required minlength="6">
+        <mat-error *ngIf= "password.hasError('required')">password is required</mat-error>
+        <mat-error *ngIf= "password.hasError('minlength')">password minlength is 8 digits</mat-error>
+      </mat-form-field>
+      <br>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item-active">
+          <a class="nav-link text-info " (click)="openSignInDialog()" routerLinkActive="active" data-toggle="modal">Have an account ?</a>
+        </li>
+    </ul>
+      <br>
+      <input type="submit" class="btn bg-gradient-info text-info  border-info" value="Submit" mat-button>
+    </form>
+    
+</mat-dialog-content>
+</mat-card>
+
+<mat-dialog-actions>
+    <!--<button class="mat-raised-button"(click)="close()">Close</button>-->
+    <button mat-button mat-dialog-close class ="text-danger">close</button>
+  <!--<button class="mat-raised-button mat-primary"(click)="save()">Save</button>-->
+</mat-dialog-actions>
+

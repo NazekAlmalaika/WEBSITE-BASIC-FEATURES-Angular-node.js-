@@ -1,0 +1,36 @@
+
+<h2 mat-dialog-title class="text-info">Sign Up</h2>
+<mat-card class="bg-light alternate-theme">
+<mat-dialog-content class="mat-typography" [formGroup]="form">
+    <form id="formData" #loginForm="ngForm" (ngSubmit)= "login(loginForm)">
+    
+      <mat-form-field>
+        <input matInput placeholder="email" name="email" type="email" ngModel #email="ngModel" required >
+        <mat-error *ngIf= "email.hasError('required')" >Email is required</mat-error>
+        <mat-error *ngIf= "email.hasError('pattern')" >Email address is invalid</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="password" name="password" type="password" ngModel #password="ngModel" required >
+        <mat-error *ngIf= "password.hasError('required')">password is required</mat-error>
+        <mat-error *ngIf= "password.hasError('minlength')">password minlength is 8 digits</mat-error>
+      </mat-form-field>
+      <br>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item-active">
+          <a class="nav-link text-info  " (click)="openSignUpDialog()" routerLinkActive="active" data-toggle="modal">Not Registered Yet ?</a>
+        </li>
+    </ul>
+      <br>
+      <input type="submit" class="btn bg-gradient-info text-info  border-info" value="Submit" mat-button>
+    </form>
+    
+</mat-dialog-content>
+</mat-card>
+
+<mat-dialog-actions>
+    <!--<button class="mat-raised-button"(click)="close()">Close</button>-->
+    <button mat-button mat-dialog-close class ="text-danger">close</button>
+  <!--<button class="mat-raised-button mat-primary"(click)="save()">Save</button>-->
+</mat-dialog-actions>
+
